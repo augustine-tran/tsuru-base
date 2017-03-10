@@ -58,5 +58,6 @@ COPY build/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY build/nginx.conf /etc/nginx/sites-enabled/default
 COPY build/php.ini /etc/php/7.0/fpm/php.ini
 
+RUN cp /var/lib/tsuru/base/deploy /var/lib/tsuru/deploy
 EXPOSE 80 443
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
